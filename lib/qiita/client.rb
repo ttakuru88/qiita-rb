@@ -152,7 +152,7 @@ module Qiita
       Qiita::Response.new(
         connection.send(
           request_method,
-          URI.escape(path),
+          CGI.escape(path).gsub(/%2F/, '/'),
           params,
           headers,
         )

@@ -281,7 +281,7 @@ describe Qiita::Client do
       end
 
       let(:requested_url) do
-        "https://#{requested_host}#{URI.escape(path)}"
+        "https://#{requested_host}#{CGI.escape(path)}"
       end
 
       it "sends request with escaped path" do
